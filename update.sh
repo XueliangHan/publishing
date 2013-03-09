@@ -5,7 +5,7 @@ COMMENT=$1
 #Local DIR
 BASE_DIR=`pwd`
 J_DIR="./jekyll"
-GIT_DIR="./xuelianghan.github.com"
+PUBLISHING_DIR="./xuelianghan.github.com"
 
 #excute git command
 push() {
@@ -20,12 +20,12 @@ jekyll
 
 echo "Uploading website..."
 cd $BASE_DIR
-cd $GIT_DIR
+cd $PUBLISHING_DIR
 git checkout master
 cd $BASE_DIR
-#rm -r $GIT_DIR/*
-cp -r $J_DIR/_site/* $GIT_DIR/
-cd $GIT_DIR
+#rm -r $PUBLISHING_DIR/*
+cp -r $J_DIR/_site/* $PUBLISHING_DIR/
+cd $PUBLISHING_DIR
 push
 
 echo "Uploading blog source code..."
